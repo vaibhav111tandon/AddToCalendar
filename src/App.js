@@ -49,12 +49,12 @@ function App() {
           <br/><br/>
           <Input 
             size="large" 
-            value={`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${moment.utc(date[0]).format('YYYYMMDDTHHmmss') + 'Z%2F' + moment.utc(date[1]).format('YYYYMMDDTHHmmss') + 'Z'}&details=${description}&location=${location}`}
+            value={`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${moment.utc(date[0]).format('YYYYMMDDTHHmmss') + 'Z%2F' + moment.utc(date[1]).format('YYYYMMDDTHHmmss') + 'Z'}&details=${description}&location=${location}&text=${title}`}
             suffix={<CopyFilled style={{cursor: 'pointer'}} 
-            onClick={() => navigator.clipboard.writeText(`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${moment.utc(date[0]).format('YYYYMMDDTHHmmss') + 'Z%2F' + moment.utc(date[1]).format('YYYYMMDDTHHmmss') + 'Z'}&details=${description}&location=${location}`)}/>} 
+            onClick={() => navigator.clipboard.writeText(`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${moment.utc(date[0]).format('YYYYMMDDTHHmmss') + 'Z%2F' + moment.utc(date[1]).format('YYYYMMDDTHHmmss') + 'Z'}&details=${description}&location=${location}&text=${title}`)}/>} 
             />
             <br/><br/>
-          <Button onClick={() => window.open(`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${moment.utc(date[0]).format('YYYYMMDDTHHmmss') + 'Z%2F' + moment.utc(date[1]).format('YYYYMMDDTHHmmss') + 'Z'}&details=${description}&location=${location}`, '_blank')}>
+          <Button onClick={() => window.open(`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${moment.utc(date[0]).format('YYYYMMDDTHHmmss') + 'Z%2F' + moment.utc(date[1]).format('YYYYMMDDTHHmmss') + 'Z'}&details=${description}&location=${location}&text=${title}`, '_blank')}>
             Preview
           </Button>  
         </div>
