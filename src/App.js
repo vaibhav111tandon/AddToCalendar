@@ -56,7 +56,10 @@ function App() {
             <br/><br/>
           <Button onClick={() => window.open(`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${moment.utc(date[0]).format('YYYYMMDDTHHmmss') + 'Z%2F' + moment.utc(date[1]).format('YYYYMMDDTHHmmss') + 'Z'}&details=${description}&location=${location}&text=${title}`, '_blank')}>
             Preview
-          </Button>  
+          </Button>
+          <Button style={{marginLeft: '20px'}} onClick={() => window.open(`data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${moment.utc(date[0]).format('YYYYMMDDTHHmmss')}Z%0ADTEND:${moment.utc(date[1]).format('YYYYMMDDTHHmmss')}Z%0ASUMMARY:${title}%0ADESCRIPTION:${description}%0ALOCATION:${location}%0AEND:VEVENT%0AEND:VCALENDAR%0A`, '_blank')}>
+            Download .ics
+          </Button>
         </div>
       </section>
       <footer className="App__footer">
